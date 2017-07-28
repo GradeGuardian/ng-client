@@ -5,12 +5,14 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppComponent } from './app.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { TitlebarComponent } from './components/chat/titlebar/titlebar.component';
+import { TextboxComponent } from './components/chat/textbox/textbox.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatComponent,
     TitlebarComponent,
+    TextboxComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TitlebarComponent } from './titlebar/titlebar.component'
+import { TextboxComponent } from './textbox/textbox.component'
 
 @Component({
   selector: 'app-chat',
