@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { TitlebarComponent } from './components/chat/titlebar/titlebar.component';
 import { TextboxComponent } from './components/chat/textbox/textbox.component';
+import { MessageboxComponent } from './components/chat/messagebox/messagebox.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { TextboxComponent } from './components/chat/textbox/textbox.component';
     ChatComponent,
     TitlebarComponent,
     TextboxComponent,
+    MessageboxComponent,
   ],
   imports: [
     BrowserModule,
