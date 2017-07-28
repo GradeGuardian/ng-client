@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TitlebarComponent } from './titlebar/titlebar.component'
 
 @Component({
   selector: 'app-chat',
