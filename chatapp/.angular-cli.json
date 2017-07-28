@@ -20,7 +20,8 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "../node_modules/angular-bootstrap-md/scss/mdb.scss"
+        "../node_modules/angular-bootstrap-md/scss/mdb.scss",
+        "assets/themes/gg-md-theme.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
