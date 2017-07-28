@@ -1,0 +1,5 @@
+.messagebox-container {
+    background-color: #EEEEEE;
+    height: calc(100% - 140px);
+    width: 100%;
+}
