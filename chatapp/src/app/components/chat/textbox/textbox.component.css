@@ -5,3 +5,16 @@
     border-bottom-left-radius: 0.2em;
     border-bottom-right-radius: 0.2em;
 }
+
+.input-holder {
+    background-color: #EEEEEE;
+    border-radius: 99em;
+    height: 50px;
+    line-height: 50px;
+    width: 90%;
+    margin-top: 10px;
+}
+
+.input-holder input {
+    width: 95%;
+}
