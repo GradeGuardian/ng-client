@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MdButtonModule, MdIconModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { ChatComponent } from './components/chat/chat.component';
@@ -18,7 +20,9 @@ import { MessageboxComponent } from './components/chat/messagebox/messagebox.com
   ],
   imports: [
     BrowserModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    BrowserAnimationsModule,
+    MdButtonModule, MdIconModule
   ],
   providers: [],
   bootstrap: [AppComponent],
