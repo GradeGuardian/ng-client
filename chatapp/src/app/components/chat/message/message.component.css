@@ -7,19 +7,13 @@
     padding: 10px;
     border-radius: 0.3em;
     color: #EEEEEE;
-    margin: 20px;
+    margin-top: 3px;
+    margin-left: 20px;
+    margin-right: 20px;
     clear: both;
     line-height: 18px;
     position: relative;
     word-wrap: break-word;
-}
-
-.message-body:after {
-  position: absolute;
-  content: "";
-  width: 0;
-  height: 0;
-  border-style: solid;
 }
 
 .message-server {
@@ -27,7 +21,11 @@
     float: left;
 }
 
-.message-server:after {
+.message-server-arrow {
+    margin-top: 20px;
+}
+
+.message-server-arrow:after {
     content: "";
     position: absolute;
     border-width: 0px 10px 10px 0;
@@ -47,7 +45,11 @@
     float: right;
 }
 
-.message-client:after {
+.message-client-arrow {
+    margin-top: 20px;
+}
+
+.message-client-arrow:after {
     content: "";
     position: absolute;
     border-width: 0px 0 10px 10px;

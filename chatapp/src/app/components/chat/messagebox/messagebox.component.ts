@@ -43,10 +43,12 @@ export class MessageboxComponent implements OnInit, OnDestroy {
       if(this.prevMessageType === 'client') {
         message.continuous = false
         this.prevMessageType = 'server'
+      } else {
+        message.continuous = true
       }
 
       this.messages.push(message)
-      setTimeout( () => this.scrollToBottom(), 200)
+      setTimeout( () => this.scrollToBottom(), 20)
     })
   }
 

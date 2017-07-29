@@ -1,5 +1,10 @@
 <div class="message-container">
-  <div class="message-body z-depth-1" [ngClass]="{'message-server': message.isSenderServer, 'message-client': !message.isSenderServer}">
+  <div class="message-body z-depth-1" [ngClass]="{
+    'message-server': message.isSenderServer, 
+    'message-client': !message.isSenderServer,
+    'message-server-arrow': message.isSenderServer && !message.continuous, 
+    'message-client-arrow': !message.isSenderServer && !message.continuous
+  }">
     {{message.message}}
   </div>
 </div>
