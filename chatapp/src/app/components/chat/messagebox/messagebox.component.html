@@ -1,3 +1,5 @@
 <div class="container-fluid messagebox-container">
-  <h1>test messagebox</h1>
+  <div class="container">
+    <app-message *ngFor="let message of messages" [message]='message'></app-message>
+  </div>
 </div>
