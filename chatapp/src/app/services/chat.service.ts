@@ -13,7 +13,7 @@ export class ChatService {
   constructor() { }
 
   public sendMessage(message: Message) {
-    this.socket.emit('add-message', message);
+    this.socket.emit('message', message);
   }
 
   public getMessages() {

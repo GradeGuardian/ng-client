@@ -1,28 +1,49 @@
+.message-container {
+    position: relative;
+}
+
 .message-body {
     background-color: #E0E0E0;
     padding: 10px;
     border-radius: 0.3em;
     color: #EEEEEE;
+    margin: 20px;
+    display: inline-block;
 }
 
 .message-server {
     background-color: #03A9F4;
-    position: absolute;
     left:0;
 }
 
-.message-server:before {
-    content: ' ';
-    height: 0;
+.message-server:after {
+    content: "";
     position: absolute;
+    top: 20px;
+    left: 0;
+    display: block;
     width: 0;
-    top: 0;
-    left:-18px;
+    z-index: 1;
     border-left: 12px solid transparent;
     border-right: 12px solid transparent;
     border-bottom: 12px solid transparent;
     border-right-color: #03A9F4;
 }
+
+/*
+.message-server:before {
+    content: "";
+    position: absolute;
+    top: 250px;
+    left: 0;
+    display: block;
+    width: 0;
+    z-index: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right-color: red;
+}*/
 
 .message-client {
     background-color: #4CAF50;

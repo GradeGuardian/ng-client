@@ -16,35 +16,10 @@ export class MessageboxComponent implements OnInit, OnDestroy {
   constructor(private _chatService: ChatService) {
     this.messages = [
       {
-        message: 'Hi',
+        message: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
         isSenderServer: true,
         sent: true
       },
-      {
-        message: 'Hi',
-        isSenderServer: false,
-        sent: true
-      },
-      {
-        message: 'How are you',
-        isSenderServer: true,
-        sent: true
-      },
-      {
-        message: 'I\'m fine',
-        isSenderServer: false,
-        sent: true
-      },
-      {
-        message: 'What is the meaning of life?',
-        isSenderServer: true,
-        sent: true
-      },
-      {
-        message: '42',
-        isSenderServer: false,
-        sent: false
-      }
     ]
   }
 
@@ -53,8 +28,8 @@ export class MessageboxComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.connection = this._chatService.getMessages().subscribe( message => {
-      console.log(message)
+    this.connection = this._chatService.getMessages().subscribe( (message: Message) => {
+      this.messages.push(message)
     })
   }
 
