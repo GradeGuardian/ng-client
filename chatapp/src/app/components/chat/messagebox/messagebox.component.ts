@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/co
 import { Message } from '../../../interfaces/Message'
 import { MessageComponent } from '../message/message.component';
 import { ChatService } from '../../../services/chat.service';
+import { DataService } from '../../../services/data.service';
 
 @Component({
   selector: 'app-messagebox',
@@ -16,40 +17,28 @@ export class MessageboxComponent implements OnInit, OnDestroy {
   private connection: any;
   private prevMessageType: string;
 
-  constructor(private _chatService: ChatService) {
-    this.prevMessageType = 'client'
-
-    this.messages = [
-      {
-        message: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
-        isSenderServer: false,
-        sent: true
-      },
-      {
-        message: 'yo dawg',
-        isSenderServer: false,
-        sent: true
-      },
-    ]
-  }
-
-  sendMessage() {
-    //this._chatService.sendMessage(this)
-  }
+  constructor(private _chatService: ChatService, private _dataService: DataService) { }
 
   ngOnInit() {
+
+    this._dataService.currentMessages.subscribe(messages => this.messages = messages)
+    this._dataService.currentPrevMessageType.subscribe(type => this.prevMessageType = type)
+
     this.connection = this._chatService.getMessages().subscribe((message: Message) => {
 
       if(this.prevMessageType === 'client') {
         message.continuous = false
         this.prevMessageType = 'server'
+        this._dataService.updatePrevMessageType(this.prevMessageType)
       } else {
         message.continuous = true
       }
 
       this.messages.push(message)
+      this._dataService.updateMessages(this.messages)
       setTimeout( () => this.scrollToBottom(), 20)
     })
+    
   }
 
   ngOnDestroy() {
