@@ -1,5 +1,8 @@
 .messagebox-container {
-    background-color: #EEE;
+    background-image:    url(../../../../assets/img/background.jpg);
+    background-size:     cover;        
+    background-repeat:   no-repeat;
+    background-position: center center;
     height: calc(100% - 140px);
     width: 100%;
 }
