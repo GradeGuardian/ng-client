@@ -1,17 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Message } from '../../../interfaces/Message'
 import { MessageComponent } from '../message/message.component';
+import { ChatService } from '../../../services/chat.service';
 
 @Component({
   selector: 'app-messagebox',
   templateUrl: './messagebox.component.html',
   styleUrls: ['./messagebox.component.css']
 })
-export class MessageboxComponent implements OnInit {
+export class MessageboxComponent implements OnInit, OnDestroy {
 
   public messages: Message[];
+  private connection: any;
 
-  constructor() {
+  constructor(private _chatService: ChatService) {
     this.messages = [
       {
         message: 'Hi',
@@ -47,6 +49,10 @@ export class MessageboxComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ngOnDestroy() {
+    
   }
 
 }
