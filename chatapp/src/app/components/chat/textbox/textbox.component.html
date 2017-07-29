@@ -1,7 +1,7 @@
 <div class="container-fluid textbox-container">
   <div class="float-left input-holder text-center">
     <form action="#">
-      <input type="text" [(ngModel)]="messageText" name="messageText" (keyup.enter)="sendMessage()" placeholder="Type your message">
+      <input type="text" [(ngModel)]="messageText" name="messageText" (keyup.enter)="sendMessage()" placeholder="Type your message" autocomplete="off">
     </form>
   </div>
 

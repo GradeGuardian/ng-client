@@ -10,7 +10,7 @@ import * as io from 'socket.io-client';
 @Injectable()
 export class ChatService {
 
-  private url = 'http://localhost:8000';
+  private url = 'http://52.14.34.73:7000';
   private socket: any;
   public messages: Message[];
   private prevMessageType: string;
@@ -18,15 +18,6 @@ export class ChatService {
   constructor(private _dataService: DataService) {
     this._dataService.currentMessages.subscribe(messages => this.messages = messages)
     this._dataService.currentPrevMessageType.subscribe(type => this.prevMessageType = type)
-
-    this.messages = [
-      {
-        message: 'yo dawg',
-        isSenderServer: false,
-        sent: true
-      },
-    ]
-    this._dataService.updateMessages(this.messages)
   }
 
   public sendMessage(messageText: string) {
