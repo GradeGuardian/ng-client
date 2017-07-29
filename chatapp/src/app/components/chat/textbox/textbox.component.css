@@ -16,7 +16,7 @@
 }
 
 .input-holder input {
-    width: 95%;
+    width: calc(100% - 60px);
 }
 
 .button-holder {

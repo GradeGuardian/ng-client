@@ -13,7 +13,8 @@
     clear: both;
     line-height: 18px;
     position: relative;
-    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 80%;
 }
 
 .message-server {
