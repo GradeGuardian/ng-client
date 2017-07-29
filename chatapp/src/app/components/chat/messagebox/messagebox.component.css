@@ -7,3 +7,22 @@
     width: 100%;
     overflow-y: auto;
 }
+
+#chatbox::-webkit-scrollbar-track
+{
+	background: transparent;
+}
+
+#chatbox::-webkit-scrollbar
+{
+    transition: all .5s;
+    width: 5px;
+    height: 1px;
+    z-index: 10;
+}
+
+#chatbox::-webkit-scrollbar-thumb
+{
+    background: #b3ada7;
+    border-radius: 0.3em;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { Message } from '../../../interfaces/Message'
 import { MessageComponent } from '../message/message.component';
 import { ChatService } from '../../../services/chat.service';
@@ -9,6 +9,8 @@ import { ChatService } from '../../../services/chat.service';
   styleUrls: ['./messagebox.component.css']
 })
 export class MessageboxComponent implements OnInit, OnDestroy {
+
+  @ViewChild('chatbox') private chatboxContainer: ElementRef;
 
   public messages: Message[];
   private connection: any;
@@ -33,13 +35,18 @@ export class MessageboxComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.connection = this._chatService.getMessages().subscribe( (message: Message) => {
+    this.connection = this._chatService.getMessages().subscribe((message: Message) => {
       this.messages.push(message)
+      setTimeout( () => this.scrollToBottom(), 200)
     })
   }
 
   ngOnDestroy() {
     this.connection.unsubscribe();
+  }
+
+  scrollToBottom(): void {
+    this.chatboxContainer.nativeElement.scrollTop = this.chatboxContainer.nativeElement.scrollHeight;
   }
 
 }
