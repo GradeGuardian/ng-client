@@ -1,11 +1,11 @@
 <div class="container-fluid textbox-container">
   <div class="float-left input-holder text-center">
     <form action="#">
-      <input type="text" [(ngModel)]="messageText" (keyup.enter)=placeholder="Type your message">
+      <input type="text" [(ngModel)]="messageText" name="messageText" (keyup.enter)="sendMessage()" placeholder="Type your message">
     </form>
   </div>
 
   <div class="float-right button-holder">
-    <button md-fab color="primary">&nbsp;<md-icon>send</md-icon></button>
+    <button md-fab color="primary" (click)="sendMessage()" >&nbsp;<md-icon>send</md-icon></button>
   </div>
 </div>
