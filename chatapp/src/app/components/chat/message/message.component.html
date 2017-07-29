@@ -1,11 +1,7 @@
 <div class="row spacer"></div>
 
-<div class="row">
-  <div class="message-container">
-    <div class="message-body" [ngClass]="{'message-server': message.isSenderServer, 'message-client': !message.isSenderServer}">
-      {{message.message}}
-    </div>
-  </div>
+<div class="message-body z-depth-1" [ngClass]="{'message-server': message.isSenderServer, 'message-client': !message.isSenderServer}">
+  {{message.message}}
 </div>
 <br>
 
