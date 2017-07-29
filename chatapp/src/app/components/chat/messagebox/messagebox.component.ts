@@ -48,11 +48,18 @@ export class MessageboxComponent implements OnInit, OnDestroy {
     ]
   }
 
+  sendMessage() {
+    //this._chatService.sendMessage(this)
+  }
+
   ngOnInit() {
+    this.connection = this._chatService.getMessages().subscribe( message => {
+      console.log(message)
+    })
   }
 
   ngOnDestroy() {
-    
+    this.connection.unsubscribe();
   }
 
 }
