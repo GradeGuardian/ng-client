@@ -1,7 +1,7 @@
 .message-body {
     background-color: #E0E0E0;
     padding: 10px;
-    border-radius: 0.2em;
+    border-radius: 0.3em;
     color: #EEEEEE;
 }
 
@@ -18,9 +18,9 @@
     width: 0;
     top: 0;
     left:-18px;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid transparent;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid transparent;
     border-right-color: #03A9F4;
 }
 
@@ -37,9 +37,9 @@
     width: 0;
     top: 0;
     right:-18px;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid transparent;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid transparent;
     border-left-color: #4CAF50;
 }
 
