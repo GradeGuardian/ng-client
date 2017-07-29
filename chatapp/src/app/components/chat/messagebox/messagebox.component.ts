@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageboxComponent implements OnInit {
 
+  private 
+
   constructor() { }
 
   ngOnInit() {
