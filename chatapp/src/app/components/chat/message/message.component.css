@@ -1,0 +1,48 @@
+.message-body {
+    background-color: #E0E0E0;
+    padding: 10px;
+    border-radius: 0.2em;
+    color: #EEEEEE;
+}
+
+.message-server {
+    background-color: #03A9F4;
+    position: absolute;
+    left:0;
+}
+
+.message-server:before {
+    content: ' ';
+    height: 0;
+    position: absolute;
+    width: 0;
+    top: 0;
+    left:-18px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right-color: #03A9F4;
+}
+
+.message-client {
+    background-color: #4CAF50;
+    position: absolute;
+    right:0;
+}
+
+.message-client:before {
+    content: ' ';
+    height: 0;
+    position: absolute;
+    width: 0;
+    top: 0;
+    right:-18px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left-color: #4CAF50;
+}
+
+.spacer {
+    height: 15px;
+}

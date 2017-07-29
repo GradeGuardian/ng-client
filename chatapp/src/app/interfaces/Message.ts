@@ -1,6 +1,6 @@
 export class Message {
     message: string;
-    sender: string;
+    isSenderServer: boolean;
     sent: boolean;
 
     constructor() {

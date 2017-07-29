@@ -5,4 +5,6 @@
     background-position: center center;
     height: calc(100% - 140px);
     width: 100%;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
 }

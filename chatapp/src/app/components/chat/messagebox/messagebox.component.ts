@@ -15,32 +15,32 @@ export class MessageboxComponent implements OnInit {
     this.messages = [
       {
         message: 'Hi',
-        sender: 'server',
+        isSenderServer: true,
         sent: true
       },
       {
         message: 'Hi',
-        sender: 'client',
+        isSenderServer: false,
         sent: true
       },
       {
         message: 'How are you',
-        sender: 'server',
+        isSenderServer: true,
         sent: true
       },
       {
         message: 'I\'m fine',
-        sender: 'client',
+        isSenderServer: false,
         sent: true
       },
       {
         message: 'What is the meaning of life?',
-        sender: 'server',
+        isSenderServer: true,
         sent: true
       },
       {
         message: '42',
-        sender: 'client',
+        isSenderServer: false,
         sent: false
       }
     ]
