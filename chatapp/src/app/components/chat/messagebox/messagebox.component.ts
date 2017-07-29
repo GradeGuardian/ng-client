@@ -9,7 +9,7 @@ import { MessageComponent } from '../message/message.component';
 })
 export class MessageboxComponent implements OnInit {
 
-  private messages: Message[];
+  public messages: Message[];
 
   constructor() {
     this.messages = [
