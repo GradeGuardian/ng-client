@@ -10,8 +10,9 @@ import * as io from 'socket.io-client';
 @Injectable()
 export class ChatService {
 
-  private url = 'http://52.14.34.73:7000';
+  //private url = 'http://52.14.34.73:7000';
   //private url = 'http://localhost:7000'
+  private url = 'http://52.14.179.178:4404/';
   private socket: any;
   public messages: Message[];
   private prevMessageType: string;
