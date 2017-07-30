@@ -47,7 +47,8 @@ export class ChatService {
 
     // Listen for success
     this.socket.on('message-success', () => {
-      console.log('success: ', message)
+      message.sent = true;
+      this._dataService.updateMessages(this.messages)
     })
   }
 
