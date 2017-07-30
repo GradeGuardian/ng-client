@@ -17,6 +17,15 @@
     max-width: 80%;
 }
 
+.pending {
+    background-color: #E0E0E0 !important;
+    color: #616161;
+}
+
+.pending.message-client-arrow:after {
+    border-left-color: #E0E0E0 !important;
+}
+
 .message-server {
     background-color: #03A9F4;
     float: left;

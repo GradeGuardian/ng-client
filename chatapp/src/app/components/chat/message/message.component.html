@@ -3,7 +3,8 @@
     'message-server': message.isSenderServer, 
     'message-client': !message.isSenderServer,
     'message-server-arrow': message.isSenderServer && !message.continuous, 
-    'message-client-arrow': !message.isSenderServer && !message.continuous
+    'message-client-arrow': !message.isSenderServer && !message.continuous,
+    'pending': !message.sent
   }">
     {{message.message}}
   </div>

@@ -24,7 +24,7 @@ export class ChatService {
   public sendMessage(messageText: string) {
     let newMessage: Message = {
       message: messageText,
-      sent: true,
+      sent: false,
       isSenderServer: false
     }
 
@@ -47,7 +47,7 @@ export class ChatService {
 
     // Listen for success
     this.socket.on('message-success', () => {
-      console.log('success')
+      console.log('success: ', message)
     })
   }
 
