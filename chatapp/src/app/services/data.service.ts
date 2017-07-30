@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ElementRef } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Message } from '../interfaces/Message';
 
@@ -11,6 +11,9 @@ export class DataService {
   private prevMessageTypeSource = new BehaviorSubject<string>('client')
   currentPrevMessageType = this.prevMessageTypeSource.asObservable()
 
+  private chatboxViewSource = new BehaviorSubject<ElementRef>(null)
+  currentChatboxView = this.chatboxViewSource.asObservable()
+
   constructor() { }
 
   public updateMessages(messages: Message []) {
@@ -19,5 +22,9 @@ export class DataService {
 
   public updatePrevMessageType(type: string) {
     this.prevMessageTypeSource.next(type)
+  }
+
+  public updateChatboxView(chatboxView: ElementRef) {
+    this.chatboxViewSource.next(chatboxView)
   }
 }

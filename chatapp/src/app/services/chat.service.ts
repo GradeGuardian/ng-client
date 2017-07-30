@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ViewChild, ElementRef } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { Message } from '../interfaces/Message';
@@ -10,15 +10,17 @@ import * as io from 'socket.io-client';
 @Injectable()
 export class ChatService {
 
-  //private url = 'https://52.14.34.73:7000';
-  private url = 'http://localhost:7000'
+  private url = 'http://52.14.34.73:7000';
+  //private url = 'http://localhost:7000'
   private socket: any;
   public messages: Message[];
   private prevMessageType: string;
+  private chatboxView: ElementRef;
 
   constructor(private _dataService: DataService) {
     this._dataService.currentMessages.subscribe(messages => this.messages = messages)
     this._dataService.currentPrevMessageType.subscribe(type => this.prevMessageType = type)
+    this._dataService.currentChatboxView.subscribe(chatboxView => this.chatboxView = chatboxView)
   }
 
   public sendMessage(messageText: string) {
@@ -38,6 +40,7 @@ export class ChatService {
 
     this.messages.push(newMessage)
     this._dataService.updateMessages(this.messages)
+    this.scrollToBottom()
 
     this._sendMessage(newMessage)
   }
@@ -63,6 +66,12 @@ export class ChatService {
     })
 
     return observable;
+  }
+
+  private scrollToBottom(): void {
+    setTimeout( () => {
+      this.chatboxView.nativeElement.scrollTop = this.chatboxView.nativeElement.scrollHeight;
+    }, 20)
   }
 
 }

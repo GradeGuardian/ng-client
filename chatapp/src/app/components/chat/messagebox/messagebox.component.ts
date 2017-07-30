@@ -24,6 +24,8 @@ export class MessageboxComponent implements OnInit, OnDestroy {
     this._dataService.currentMessages.subscribe(messages => this.messages = messages)
     this._dataService.currentPrevMessageType.subscribe(type => this.prevMessageType = type)
 
+    this._dataService.updateChatboxView(this.chatboxContainer)
+
     this.connection = this._chatService.getMessages().subscribe((message: Message) => {
 
       if(this.prevMessageType === 'client') {
