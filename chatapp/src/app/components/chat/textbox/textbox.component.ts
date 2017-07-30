@@ -8,14 +8,14 @@ import { ChatService } from '../../../services/chat.service';
 })
 export class TextboxComponent implements OnInit {
 
-  private messageText: string;
+  messageText: string;
 
   constructor(private _chatService: ChatService) { }
 
   ngOnInit() {
   }
 
-  private sendMessage() {
+  sendMessage() {
     if(this.messageText.trim().length !== 0) {
       this._chatService.sendMessage(this.messageText)
     }

@@ -10,7 +10,8 @@ import * as io from 'socket.io-client';
 @Injectable()
 export class ChatService {
 
-  private url = 'http://52.14.34.73:7000';
+  //private url = 'https://52.14.34.73:7000';
+  private url = 'http://localhost:7000'
   private socket: any;
   public messages: Message[];
   private prevMessageType: string;
@@ -43,6 +44,11 @@ export class ChatService {
 
   private _sendMessage(message: Message) {
     this.socket.emit('message', message);
+
+    // Listen for success
+    this.socket.on('message-success', () => {
+      console.log('success')
+    })
   }
 
   public getMessages() {
