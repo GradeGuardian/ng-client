@@ -5,18 +5,17 @@ states.forEach(stateObj => {
     let color_RGB = hexToRgb(color)
     let color_gray = desaturate(color_RGB.r, color_RGB.g, color_RGB.b)
     stateObj.node.style.fill = color_gray
-    let oldFill = stateObj.node.style.fill
 
     stateObj.mouseover((e) => {
-        stateObj.node.style.fill = '#5CB660';
+        stateObj.node.style.fill = color;
         $('#overview-card').show()
         $('#overview-title').text(stateObj.data('id'))
-        console.log(stateObj.data('id'))
+        //console.log(stateObj.data('id'))
     })
 
     stateObj.mouseout((e) => {
         $('#overview-card').hide()
-        stateObj.node.style.fill = oldFill
+        stateObj.node.style.fill = color_gray
     })
 
     stateObj.click((e) => {
