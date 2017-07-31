@@ -174,3 +174,12 @@ country.push(
     svg_30,
     svg_31
 );
+
+let oldFill = Tamil_Nadu.node.style.fill
+Tamil_Nadu.mouseover( (e) => {
+    Tamil_Nadu.node.style.fill = '#3F51B5';
+})
+
+Tamil_Nadu.mouseout( (e) => {
+    Tamil_Nadu.node.style.fill = oldFill;
+})
