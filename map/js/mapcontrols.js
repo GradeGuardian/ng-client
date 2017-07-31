@@ -7,6 +7,7 @@ states.forEach(stateObj => {
     let oldFill = stateObj.node.style.fill
     stateObj.mouseover((e) => {
         stateObj.node.style.fill = '#5CB660';
+        console.log($(stateObj.node).offset())
     })
 
     stateObj.mouseout((e) => {

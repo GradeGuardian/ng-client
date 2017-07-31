@@ -1,6 +1,6 @@
 
-let svgWidth = '1638.55';
-let svgHeight = '1852.41';
+let svgWidth = '1570';
+let svgHeight = '1750';
 
 var rsr = Raphael('map',svgWidth ,svgHeight);
 rsr.setViewBox(0, 0, svgWidth, svgHeight );
