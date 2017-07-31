@@ -17,3 +17,26 @@ path {
     max-width: 800px;
     height: auto;
 }
+
+.state-overview-card {
+    position: absolute;
+    z-index: 5;
+    width: 450px;
+    right: 180px;
+    top: 600px;
+}
+
+@media (max-width:1200px){
+    .state-overview-card {
+        right: 20px;
+    }
+}
+
+@media (max-width:992px){
+    .state-overview-card {
+        position: relative;
+        width: 80vw;
+        top: 0;
+        right: 0;
+    }
+}
