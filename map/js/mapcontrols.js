@@ -7,7 +7,8 @@ states.forEach(stateObj => {
     stateObj.node.style.fill = color_gray
 
     stateObj.mouseover((e) => {
-        stateObj.node.style.fill = color;
+        stateObj.node.style.fill = color
+        stateObj.node.style.cursor = 'pointer'
         $('#overview-card').show()
         $('#overview-title').text(stateObj.data('id'))
         //console.log(stateObj.data('id'))

@@ -18,9 +18,11 @@ path {
     margin-top: 20px;
     margin-left: 1px;
     margin-right: 1px;
+    padding: 0 0 5px 0px;
 }
 
 #map svg {
+    padding: 5px;
     width: 90vw;
     max-width: 800px;
     height: auto;
