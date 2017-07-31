@@ -42,6 +42,7 @@ path {
 
 @media (max-width:992px){
     .state-overview-card {
+        margin-top: 20px;
         margin-bottom: 40px;
         position: relative;
         z-index: auto;

@@ -1,10 +1,12 @@
 states.forEach(stateObj => {
-    let color = stateObj.attrs.fill;
-    let color_RGB = hexToRgb(color);
-    let color_gray = desaturate(color_RGB.r, color_RGB.g, color_RGB.b);
-    stateObj.node.style.fill = color_gray;
 
+    /* Styling */
+    let color = stateObj.attrs.fill
+    let color_RGB = hexToRgb(color)
+    let color_gray = desaturate(color_RGB.r, color_RGB.g, color_RGB.b)
+    stateObj.node.style.fill = color_gray
     let oldFill = stateObj.node.style.fill
+
     stateObj.mouseover((e) => {
         stateObj.node.style.fill = '#5CB660';
         $('#overview-card').show()
@@ -14,7 +16,11 @@ states.forEach(stateObj => {
 
     stateObj.mouseout((e) => {
         $('#overview-card').hide()
-        stateObj.node.style.fill = oldFill;
+        stateObj.node.style.fill = oldFill
+    })
+
+    stateObj.click((e) => {
+        $('#statsModal').modal('toggle')
     })
 })
 
