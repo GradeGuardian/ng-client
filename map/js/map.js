@@ -6,8 +6,6 @@ var rsr = Raphael('map',svgWidth ,svgHeight);
 rsr.setViewBox(0, 0, svgWidth, svgHeight );
 rsr.canvas.setAttribute('preserveAspectRatio', 'none');
 
-$('#map svg').height('500px').width('300px');
-
 var group_a = rsr.set();
 var canvas_background = rsr.rect(-1, -1, 582, 402).attr({ stroke: 'null', fill: 'none', id: 'canvas_background', y: '-1', x: '-1', parent: 'group_a', 'stroke-width': '0', 'stroke-opacity': '1' }).data('id', 'canvas_background');
 group_a.attr({ 'stroke': 'null', 'name': 'group_a' });
