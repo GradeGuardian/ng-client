@@ -8,8 +8,16 @@ path {
     transition: all 200ms ease-in-out;
 }
 
-#map {
-    margin-top: 10px;
+#overview-card {
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+}
+
+.map-container {
+    margin-top: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
 }
 
 #map svg {
