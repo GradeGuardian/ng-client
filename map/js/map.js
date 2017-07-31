@@ -175,11 +175,46 @@ country.push(
     svg_31
 );
 
-let oldFill = Tamil_Nadu.node.style.fill
-Tamil_Nadu.mouseover( (e) => {
-    Tamil_Nadu.node.style.fill = '#3F51B5';
-})
+let states = []
+states.push(
+    bihar,
+    sikkim,
+    jharkhand,
+    rajasthan,
+    west_bengal,
+    madhya_pradesh,
+    chhattisgarh,
+    orissa,
+    gujarat,
+    maharashtra,
+    Goa,
+    Andhra_Pradesh,
+    Karnataka,
+    Kerala,
+    Tamil_Nadu,
+    uttar_pradesh,
+    haryana,
+    punjab,
+    uttaranchal,
+    himachal_pradesh,
+    tripura,
+    mizoram,
+    manipur,
+    nagaland,
+    meghalaya,
+    delhi_ncr,
+    jammu_and_kashmir_2_,
+    arunachal_pradesh_2_,
+    assam_2_
+)
 
-Tamil_Nadu.mouseout( (e) => {
-    Tamil_Nadu.node.style.fill = oldFill;
+states.forEach(stateObj => {
+    let oldFill = stateObj.node.style.fill
+    stateObj.mouseover((e) => {
+        stateObj.node.style.fill = '#3F51B5';
+    })
+
+    stateObj.mouseout((e) => {
+        stateObj.node.style.fill = oldFill;
+    })
 })
