@@ -14,13 +14,13 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-toggleable-md" style="background-color: #263238">
+    <nav class="navbar navbar-expand-lg navbar-dark aqua-gradient navbar-toggleable-md">
         <div class="container">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleContainer"
                 aria-controls="navbarsExampleContainer" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-            <a class="navbar-brand" href="#">Container</a>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand white-text" href="#">Container</a>
 
             <div class="collapse navbar-collapse" id="navbarsExampleContainer">
 
@@ -40,6 +40,24 @@
                     <h6 class="card-subtitle mb-2 text-muted" id="overview-subtitle">Card subtitle</h6>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
+            </div>
+        </div>
+        <hr>
+        <div class="col-xs-12 text-left jumbotron card">
+            <h1>Filters</h1>
+            <div class="form-group">
+                <input class="chb" name="group1" type="checkbox" id="radio1">
+                <label for="radio1">Option 1</label>
+            </div>
+
+            <div class="form-group">
+                <input class="chb" name="group1" type="checkbox" id="radio2">
+                <label for="radio2">Option 2</label>
+            </div>
+
+            <div class="form-group">
+                <input class="chb" name="group1" type="checkbox" id="radio3">
+                <label for="radio3">Option 3</label>
             </div>
         </div>
 
@@ -93,6 +111,14 @@
     <script>
         $(document).ready(() => {
             $('#overview-card').hide()
+
+            $(".chb").change(function () {
+                var checked = $(this).is(':checked');
+                $(".chb").prop('checked', false);
+                if (checked) {
+                    $(this).prop('checked', true);
+                }
+            });
         })
     </script>
 </body>
