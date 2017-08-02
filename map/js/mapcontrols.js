@@ -1,5 +1,5 @@
 let literacydata = null
-$.getJSON('../data/literacy.json', data => literacydata)
+$.getJSON('../data/literacy.json', data => literacydata = data)
 
 states.forEach(stateObj => {
 
@@ -14,6 +14,9 @@ states.forEach(stateObj => {
         stateObj.node.style.cursor = 'pointer'
         $('#overview-card').show()
         $('#overview-title').text(stateObj.data('name'))
+        $('#literacy-male').text(literacydata['2011'][stateObj.data('name')].Male)
+        $('#literacy-female').text(literacydata['2011'][stateObj.data('name')].Female)
+        $('#literacy-person').text(literacydata['2011'][stateObj.data('name')].Person)
         console.log(stateObj.data('name'))
     })
 
