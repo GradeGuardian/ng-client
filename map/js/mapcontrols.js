@@ -1,3 +1,6 @@
+let literacydata = null
+$.getJSON('../data/literacy.json', data => literacydata)
+
 states.forEach(stateObj => {
 
     /* Styling */
@@ -10,8 +13,8 @@ states.forEach(stateObj => {
         stateObj.node.style.fill = color
         stateObj.node.style.cursor = 'pointer'
         $('#overview-card').show()
-        $('#overview-title').text(stateObj.data('id'))
-        //console.log(stateObj.data('id'))
+        $('#overview-title').text(stateObj.data('name'))
+        console.log(stateObj.data('name'))
     })
 
     stateObj.mouseout((e) => {

@@ -39,13 +39,19 @@
 
                     <!--Card image-->
                     <div class="view gradient-card-header bg-unique">
-                        <h4 class="card-title" id="overview-title">Card title</h4>
-                        <h6 class="card-subtitle mb-2" id="overview-subtitle">Card subtitle</h6>
+                        <h4 class="card-title"><strong><span id="overview-title">Card title</span></strong></h4>
                     </div>
                     <!--/Card image-->
 
                     <div class="card-body text-center">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <table style="width:100%">
+                            <tr>
+                                <td><strong>Literacy</strong></td>
+                                <td>Person</td>
+                                <td>Male</td>
+                                <td>Female</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
 
@@ -105,73 +111,7 @@
     <script src="js/charthandler.js"></script>
     <script src="js/map.js"></script>
     <script src="js/mapcontrols.js"></script>
-
-    <script>
-        $(document).ready(() => {
-            $('#overview-card').hide()
-
-            let datafields = [
-                "Percentage single-classroom schools",
-                "Percentage single-teacher schools",
-                "Percentage schools with buildings",
-                "Percentage schools with girls toilets",
-                "Percentage schools with boys toilets",
-                "Percentage schools with toilets for CWSN (Children With Special Needs)",
-                "Percentage schools with drinking water",
-                "Percentage schools with electricity",
-                "Percentage schools with ramps, if needed",
-                "Percentage schools with a library",
-                "Percentage schools with a full time librarian",
-                "Percentage schools with a boundary wall",
-                "Percentage schools exclusively for CWSN",
-                "Percentage schools with a lab assistant",
-                "Percentage schools with a Head Master Room",
-                "Percentage schools with a hostel for boys",
-                "Percentage schools with a hostel for girls",
-                "Percentage schools with computers and internet",
-                "Percentage schools with an ICT Laboratory",
-                "Percentage schools with a playground facility",
-                "Percentage schools which conducted medical check-ups",
-                "Percentage schools having SMDC",
-                "Percentage schools with a School Building Committee",
-                "Percentage schools having a PTA",
-                "Percentage schools sstablished since 2006",
-                "Pupil-teacher ratio",
-                "Student-classroom ratio",
-                "Average number of teachers per school",
-                "Percentage female teachers",
-                "Percentage girls enrolment"
-            ]
-            
-            let row = null;
-            datafields.forEach((filterText, index) => {
-                if(index % 3 === 0) {
-                    row = $('<div>', { class: 'row' })
-                }
-
-                let formGroup = $('<div>', {class:'form-group col-sm-12 col-lg-6 col-xl-4'})
-
-                let input = '<input class="chb" name="group1" type="checkbox" id="df'+index+'">'
-                let label = $('<label>', {
-                    for: 'df'+index,
-                    text: filterText
-                })
-                
-                formGroup.append(input)
-                formGroup.append(label)
-                formGroup.appendTo(row)
-                row.appendTo($('#filter-container'))
-            })
-
-            $(".chb").change(function () {
-                var checked = $(this).is(':checked');
-                $(".chb").prop('checked', false);
-                if (checked) {
-                    $(this).prop('checked', true);
-                }
-            });
-        })
-    </script>
+    <script src="js/pagescript.js"></script>
 </body>
 
 </html>
