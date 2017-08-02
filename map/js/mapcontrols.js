@@ -17,7 +17,6 @@ states.forEach(stateObj => {
         $('#literacy-male').text(literacydata['2011'][stateObj.data('name')].Male)
         $('#literacy-female').text(literacydata['2011'][stateObj.data('name')].Female)
         $('#literacy-person').text(literacydata['2011'][stateObj.data('name')].Person)
-        console.log(stateObj.data('name'))
     })
 
     stateObj.mouseout((e) => {
@@ -28,8 +27,6 @@ states.forEach(stateObj => {
     stateObj.click((e) => {
         $('#statsModal').modal('toggle')
     })
-
-    console.log(stateObj.data('id'), stateObj.data('name'))
 })
 
 function hexToRgb(hex) {
