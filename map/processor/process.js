@@ -84,16 +84,41 @@ colNames.forEach( (colName, index) => {
 
         states.forEach(state => {
             worksheetdata.forEach( rawData => {
+                if (state == "Uttaranchal") state = "Uttarakhand"
+                if (state == "Chhatisgarh") state = "Chhattisgarh"
                 if (rawData.State == state && rawData.Year == year) {
                     
                     if(rawData[colName] === undefined) {
                         data[datafield][year][state] = 'NA'
                     } else {
-                        data[datafield][year][state] = rawData[colName]
+                        data[datafield][year][state] = rawData[colName].substring(0, rawData[colName].length - 1)
                     }
                 }
             })
         })
+    }
+})
+
+colNames.forEach( (colName, index) => {
+    for (let year = 2012; year <= 2015; year++) {
+        let avg = 0
+        let ctr = 0
+        states.forEach( state => {
+            if (state == "Uttaranchal") state = "Uttarakhand"
+            if (state == "Chhatisgarh") state = "Chhattisgarh"
+            if( state !== "India" && data['df'+index][year][state] !== "NA") {
+                avg += Number(data['df'+index][year][state])
+                ++ctr
+            }
+        })
+        //console.log(avg)
+        if(ctr === 0) {
+            avg = "NA"
+        } else {
+            avg = avg / (ctr*1.0)
+        }
+        //console.log(avg, ctr)
+        data['df'+index][year]['National Average'] = String(avg)
     }
 })
 
