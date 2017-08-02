@@ -28,6 +28,8 @@ states.forEach(stateObj => {
     stateObj.click((e) => {
         $('#statsModal').modal('toggle')
     })
+
+    console.log(stateObj.data('id'), stateObj.data('name'))
 })
 
 function hexToRgb(hex) {
