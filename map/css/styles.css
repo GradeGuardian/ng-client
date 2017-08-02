@@ -8,6 +8,14 @@ path {
     transition: all 200ms ease-in-out;
 }
 
+#loading-screen {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: white;
+}
+
 #overview-card {
     -webkit-transition: all 200ms ease-in-out;
     -moz-transition: all 200ms ease-in-out;
@@ -23,7 +31,7 @@ path {
 
 #map svg {
     padding: 5px;
-    width: 90vw;
+    width: 100%;
     max-width: 800px;
     height: auto;
 }

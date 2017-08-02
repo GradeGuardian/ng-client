@@ -14,91 +14,80 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark aqua-gradient navbar-toggleable-md">
-        <div class="container">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleContainer"
-                aria-controls="navbarsExampleContainer" aria-expanded="false" aria-label="Toggle navigation">
+    <div id="app-content">
+        <nav class="navbar navbar-expand-lg navbar-dark aqua-gradient navbar-toggleable-md">
+            <div class="container">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleContainer"
+                    aria-controls="navbarsExampleContainer" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand white-text" href="#">Container</a>
+                <a class="navbar-brand white-text" href="#">Container</a>
 
-            <div class="collapse navbar-collapse" id="navbarsExampleContainer">
+                <div class="collapse navbar-collapse" id="navbarsExampleContainer">
 
-            </div>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="row text-left card map-container">
-            <div id="map"></div>
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="card card-cascade narrower state-overview-card z-depth-2" id="overview-card">
-
-                <!--Card image-->
-                <div class="view gradient-card-header bg-unique">
-                    <h4 class="card-title" id="overview-title">Card title</h4>
-                    <h6 class="card-subtitle mb-2" id="overview-subtitle">Card subtitle</h6>
-                </div>
-                <!--/Card image-->
-
-                <div class="card-body text-center">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
             </div>
+        </nav>
 
+        <div class="container">
+            <div class="row text-left card map-container">
+                <div id="map"></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="card card-cascade narrower state-overview-card z-depth-2" id="overview-card" style="display: none">
+
+                    <!--Card image-->
+                    <div class="view gradient-card-header bg-unique">
+                        <h4 class="card-title" id="overview-title">Card title</h4>
+                        <h6 class="card-subtitle mb-2" id="overview-subtitle">Card subtitle</h6>
+                    </div>
+                    <!--/Card image-->
+
+                    <div class="card-body text-center">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+
+            </div>
+            <hr>
+            <div class="col-xs-12 text-left jumbotron card">
+                <h1 class="text-center">Filters</h1><br>
+                <div id="filter-container"></div>
+            </div>
+
+
+
+            <!-- Spacer -->
+            <div style="height: 50px"></div>
         </div>
-        <hr>
-        <div class="col-xs-12 text-left jumbotron card">
-            <h1>Filters</h1>
-            <div class="form-group">
-                <input class="chb" name="group1" type="checkbox" id="radio1">
-                <label for="radio1">Option 1</label>
-            </div>
 
-            <div class="form-group">
-                <input class="chb" name="group1" type="checkbox" id="radio2">
-                <label for="radio2">Option 2</label>
-            </div>
-
-            <div class="form-group">
-                <input class="chb" name="group1" type="checkbox" id="radio3">
-                <label for="radio3">Option 3</label>
-            </div>
-        </div>
-
-
-
-        <!-- Spacer -->
-        <div style="height: 50px"></div>
-    </div>
-
-    <div class="modal fade" id="statsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content card z-depth-5">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div class="modal fade" id="statsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content card z-depth-5">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                </div>
-                <div class="modal-body">
+                    </div>
+                    <div class="modal-body">
 
-                    <h2>This is a chart</h2>
-                    <canvas id="chart1"></canvas>
-                    <hr>
+                        <h2>This is a chart</h2>
+                        <canvas id="chart1"></canvas>
+                        <hr>
 
-                    <h2>This is another chart</h2>
-                    <canvas id="chart2"></canvas>
-                    <hr>
+                        <h2>This is another chart</h2>
+                        <canvas id="chart2"></canvas>
+                        <hr>
 
-                    <h2>These charts are nice, ja?</h2>
-                    <canvas id="chart3"></canvas>
+                        <h2>These charts are nice, ja?</h2>
+                        <canvas id="chart3"></canvas>
 
-                </div>
-                <div class="modal-footer justify-content-center">
-                    <button type="button" class="btn btn-elegant" data-dismiss="modal">Close</button>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-elegant" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -120,6 +109,59 @@
     <script>
         $(document).ready(() => {
             $('#overview-card').hide()
+
+            let datafields = [
+                "Percentage single-classroom schools",
+                "Percentage single-teacher schools",
+                "Percentage schools with buildings",
+                "Percentage schools with girls toilets",
+                "Percentage schools with boys toilets",
+                "Percentage schools with toilets for CWSN (Children With Special Needs)",
+                "Percentage schools with drinking water",
+                "Percentage schools with electricity",
+                "Percentage schools with ramps, if needed",
+                "Percentage schools with a library",
+                "Percentage schools with a full time librarian",
+                "Percentage schools with a boundary wall",
+                "Percentage schools exclusively for CWSN",
+                "Percentage schools with a lab assistant",
+                "Percentage schools with a Head Master Room",
+                "Percentage schools with a hostel for boys",
+                "Percentage schools with a hostel for girls",
+                "Percentage schools with computers and internet",
+                "Percentage schools with an ICT Laboratory",
+                "Percentage schools with a playground facility",
+                "Percentage schools which conducted medical check-ups",
+                "Percentage schools having SMDC",
+                "Percentage schools with a School Building Committee",
+                "Percentage schools having a PTA",
+                "Percentage schools sstablished since 2006",
+                "Pupil-teacher ratio",
+                "Student-classroom ratio",
+                "Average number of teachers per school",
+                "Percentage female teachers",
+                "Percentage girls enrolment"
+            ]
+            
+            let row = null;
+            datafields.forEach((filterText, index) => {
+                if(index % 3 === 0) {
+                    row = $('<div>', { class: 'row' })
+                }
+
+                let formGroup = $('<div>', {class:'form-group col-sm-12 col-lg-6 col-xl-4'})
+
+                let input = '<input class="chb" name="group1" type="checkbox" id="df'+index+'">'
+                let label = $('<label>', {
+                    for: 'df'+index,
+                    text: filterText
+                })
+                
+                formGroup.append(input)
+                formGroup.append(label)
+                formGroup.appendTo(row)
+                row.appendTo($('#filter-container'))
+            })
 
             $(".chb").change(function () {
                 var checked = $(this).is(':checked');
